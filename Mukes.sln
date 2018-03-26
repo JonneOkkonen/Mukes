@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mukes.Android", "Mukes\Muke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mukes.iOS", "Mukes\Mukes.iOS\Mukes.iOS.csproj", "{EE101261-0158-4012-AAC3-971F63AC6286}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Mukes", "Mukes\Mukes\Mukes.shproj", "{30009D9F-5E71-4850-88B2-C633EB002868}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Core", "Mukes\Mukes\Core.shproj", "{30009D9F-5E71-4850-88B2-C633EB002868}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
