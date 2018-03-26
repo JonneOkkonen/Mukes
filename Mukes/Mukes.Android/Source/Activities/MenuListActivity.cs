@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
+using Mukes.Core;
 
 namespace Mukes.Droid
 {
@@ -23,21 +24,26 @@ namespace Mukes.Droid
             // Elements
             var heading = FindViewById<TextView>(Resource.Id.heading);
             var menuList = FindViewById<ListView>(Resource.Id.menuList);
-
-            // MenuList
-            List<string> menu = new List<string>();
             
             // Add Data
             heading.Text = "Ruokalista";
-            menu.Add("Maanantai");
-            menu.Add("Tiistai");
+            List<string> menu = new List<string>();
+
+            // Fetch RSS Feed
+            RSSFeed.Fetch();
+
+            // Fill menuList
+            // CHANGE TO USE RSSFEED.List AFTER CUSTOM LIST ITEM IS CREATED
+            foreach(MenuStructure item in RSSFeed.List)
+            {
+                menu.Add($"{item.Title} {item.Description}");
+            }
 
             // MenuAdapter
             ArrayAdapter<string> menuAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, menu);
 
             // Add Adapter to menuList
             menuList.Adapter = menuAdapter;
-
         }
     }
 }
