@@ -36,7 +36,7 @@ namespace Mukes.Droid
             // CHANGE TO USE RSSFEED.List AFTER CUSTOM LIST ITEM IS CREATED
             foreach(MenuStructure item in RSSFeed.List)
             {
-                menu.Add($"{item.Title} {item.Description}");
+                menu.Add($"{item.Title} Aamupala:{item.Breakfast} Lounas:{item.Lunch} Päivällinen:{item.Dinner} Iltapala:{item.EveningSnack}");
             }
 
             // MenuAdapter

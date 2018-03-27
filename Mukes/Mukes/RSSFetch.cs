@@ -38,13 +38,25 @@ namespace Mukes.Core
             // Iterate through the items in the RSS file
             foreach (XmlNode rssNode in rssNodes)
             {
+                // Title
                 XmlNode rssSubNode = rssNode.SelectSingleNode("title");
                 string title = TitleParse(rssSubNode != null ? rssSubNode.InnerText : "");
-                rssSubNode = rssNode.SelectSingleNode("description");
-                string description = rssSubNode != null ? rssSubNode.InnerText : "";
 
+                // Check if item needs to be skipped
                 if (title != "skip"){
-                    List.Add(new MenuStructure(title, description));
+
+                    // Description
+                    rssSubNode = rssNode.SelectSingleNode("description");
+                    string description = rssSubNode != null ? rssSubNode.InnerText : "";
+
+                    // Parse Meals and add data to list
+                    List.Add(new MenuStructure(
+                             title,
+                             MealParse(description, Keywords.MealsFI[(int)Keywords.Meals.Breakfast]),
+                             MealParse(description, Keywords.MealsFI[(int)Keywords.Meals.Lunch]),
+                             MealParse(description, Keywords.MealsFI[(int)Keywords.Meals.Dinner]),
+                             MealParse(description, Keywords.MealsFI[(int)Keywords.Meals.EveningSnack])
+                            ));
                 }
             }
         }
@@ -52,7 +64,7 @@ namespace Mukes.Core
         /// <summary>
         /// Parse day of the week and date from the original title
         /// </summary>
-        /// <param name="title">Original title from RSSFeed</param>
+        /// <param name="title">Title from RSSFeed</param>
         /// <returns></returns>
         private static string TitleParse(string title)
         {
@@ -91,6 +103,26 @@ namespace Mukes.Core
             }
             System.Diagnostics.Debug.WriteLine($"No DateFound on Title ({title})");
             return "skip";
+        }
+
+        /// <summary>
+        /// Parse Breakfast, Lunch, Dinner Or EveningSnack to own string
+        /// </summary>
+        /// <param name="description">Description from RSSFeed</param>
+        /// <param name="meal">Parse given meal</param>
+        /// <returns></returns>
+        private static string MealParse(string description, string meal)
+        {
+            string result = "";
+
+            // Parse given Meal
+            try{
+                result = description.Split(new string[] { $"{meal}:" }, StringSplitOptions.None)[1].Split('.')[0].Trim();
+            }catch(IndexOutOfRangeException){
+                System.Diagnostics.Debug.WriteLine($"NoMealFound ({meal}:{description})");
+            }
+
+            return result;
         }
     }
 }

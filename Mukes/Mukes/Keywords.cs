@@ -34,5 +34,23 @@ namespace Mukes.Core
             @"(?<day>\d{1}).(?<month>\d{1}).(?<year>\d{4})" // 0.0.0000
 
         });
+
+        public enum Meals { Breakfast, Lunch, Dinner, EveningSnack };
+
+        public static List<string> MealsFI = new List<string>(new string[]
+        {
+            "Aamiainen",
+            "Lounas",
+            "Päivällinen",
+            "Iltapala"
+        });
+
+        public static List<string> MealsEN = new List<string>(new string[]
+        {
+            "Breakfast",
+            "Lunch",
+            "Dinner",
+            "Evening snack"
+        });
     }
 }
