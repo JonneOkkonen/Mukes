@@ -21,12 +21,13 @@ namespace Mukes.Droid
             // Content View
             SetContentView(Resource.Layout.MenuListView);
 
-            // Elements
-            var heading = FindViewById<TextView>(Resource.Id.heading);
+            // Resources
+            var restaurantName = FindViewById<TextView>(Resource.Id.restaurantName);
+            var refreshButton = FindViewById<ImageButton>(Resource.Id.refresh);
+            var settingsButton = FindViewById<ImageButton>(Resource.Id.settings);
             var menuList = FindViewById<ListView>(Resource.Id.menuList);
             
             // Add Data
-            heading.Text = "Ruokalista";
             List<string> menu = new List<string>();
 
             // Fetch RSS Feed
