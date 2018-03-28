@@ -52,10 +52,10 @@ namespace Mukes.Core
                     // Parse Meals and add data to list
                     List.Add(new MenuStructure(
                              title,
-                             MealParse(description, Keywords.MealsFI[(int)Keywords.Meals.Breakfast]),
-                             MealParse(description, Keywords.MealsFI[(int)Keywords.Meals.Lunch]),
-                             MealParse(description, Keywords.MealsFI[(int)Keywords.Meals.Dinner]),
-                             MealParse(description, Keywords.MealsFI[(int)Keywords.Meals.EveningSnack])
+                             MealParse(description, Lists.MealsFI[(int)Lists.Meals.Breakfast]),
+                             MealParse(description, Lists.MealsFI[(int)Lists.Meals.Lunch]),
+                             MealParse(description, Lists.MealsFI[(int)Lists.Meals.Dinner]),
+                             MealParse(description, Lists.MealsFI[(int)Lists.Meals.EveningSnack])
                             ));
                 }
             }
@@ -78,7 +78,7 @@ namespace Mukes.Core
             string result = "";
 
             // Find day of the week from title
-            foreach (string item in Keywords.Viikonpaiva)
+            foreach (string item in Lists.Viikonpaiva)
             {
                 if(title.Contains(item)){
                     result = item;
@@ -86,7 +86,7 @@ namespace Mukes.Core
             }
 
             // Find date from title
-            foreach(string format in Keywords.DateFormats)
+            foreach(string format in Lists.DateFormats)
             {
                 Regex rx = new Regex(format);
                 Match match = rx.Match(title);

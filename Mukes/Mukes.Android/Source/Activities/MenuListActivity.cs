@@ -1,13 +1,11 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
 using Mukes.Core;
+using Android.Content;
 
 namespace Mukes.Droid
 {
@@ -45,6 +43,19 @@ namespace Mukes.Droid
 
             // Add Adapter to menuList
             menuList.Adapter = menuAdapter;
+
+            // Settings Button
+            settingsButton.Click += (sender, ea) =>
+            {
+                // Go to settings
+                StartActivity(new Intent(ApplicationContext, typeof(SettingsActivity)));
+            };
+
+            // Refresh Button
+            refreshButton.Click += (sender, ea) =>
+            {
+                // TODO: Refresh Here
+            };
         }
     }
 }

@@ -9,7 +9,8 @@
     <Import_RootNamespace>Mukes</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Keywords.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lists.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestaurantsStructure.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MenuStructure.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RSSFetch.cs" />
   </ItemGroup>
