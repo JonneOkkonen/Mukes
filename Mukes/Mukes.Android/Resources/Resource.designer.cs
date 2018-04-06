@@ -106,6 +106,25 @@ namespace Mukes.Droid
 			}
 		}
 		
+		public partial class Array
+		{
+			
+			// aapt resource value: 0x7f0e0001
+			public const int URLs = 2131623937;
+			
+			// aapt resource value: 0x7f0e0000
+			public const int names = 2131623936;
+			
+			static Array()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Array()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
 			
@@ -3015,8 +3034,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f080048
 			public const int list_item = 2131230792;
 			
-			// aapt resource value: 0x7f0800bb
-			public const int masked = 2131230907;
+			// aapt resource value: 0x7f0800b9
+			public const int masked = 2131230905;
 			
 			// aapt resource value: 0x7f0800a6
 			public const int media_actions = 2131230886;
@@ -3153,9 +3172,6 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f080084
 			public const int restaurantName = 2131230852;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int restaurants = 2131230904;
-			
 			// aapt resource value: 0x7f080035
 			public const int right = 2131230773;
 			
@@ -3213,9 +3229,6 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f080071
 			public const int search_voice_btn = 2131230833;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int selectRestaurant = 2131230903;
-			
 			// aapt resource value: 0x7f080072
 			public const int select_dialog_listview = 2131230834;
 			
@@ -3234,8 +3247,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f080017
 			public const int showTitle = 2131230743;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int sliding_tabs = 2131230905;
+			// aapt resource value: 0x7f0800b7
+			public const int sliding_tabs = 2131230903;
 			
 			// aapt resource value: 0x7f080073
 			public const int smallLabel = 2131230835;
@@ -3339,8 +3352,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f08000e
 			public const int view_offset_helper = 2131230734;
 			
-			// aapt resource value: 0x7f0800ba
-			public const int visible = 2131230906;
+			// aapt resource value: 0x7f0800b8
+			public const int visible = 2131230904;
 			
 			// aapt resource value: 0x7f080098
 			public const int volume_item_container = 2131230872;
