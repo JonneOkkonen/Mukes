@@ -10,6 +10,8 @@ namespace Mukes.Droid
     [Activity(Label = "Mukes", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MenuListActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        ListView _menuList;
+        ProgressDialog _spinner;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -21,24 +23,13 @@ namespace Mukes.Droid
             var restaurantName = FindViewById<TextView>(Resource.Id.restaurantName);
             var refreshButton = FindViewById<ImageButton>(Resource.Id.refresh);
             var settingsButton = FindViewById<ImageButton>(Resource.Id.settings);
-            var menuList = FindViewById<ListView>(Resource.Id.menuList);
+            _menuList = FindViewById<ListView>(Resource.Id.menuList);
 
             // Restaurant Name
             restaurantName.Text = "Sahara, Helsinki";
 
-            // Fetch RSS Feed
-            switch(RSSFeed.Fetch())
-            {
-                case "FetchSuccessfull":
-                    // Add MenuListAdapter to menuList
-                    MenuListAdapter customAdapter = new MenuListAdapter(this, RSSFeed.List);
-                    menuList.Adapter = customAdapter;
-                    break;
-                case "NetworkError":
-                    System.Diagnostics.Debug.WriteLine("RSSFeed Fetch: NetworkError");
-                    Notifications.CreateAlert(this, "NetworkError").Show();
-                    break;
-            }
+            // Load Menu to ListView
+            LoadMenu();
 
             // Settings Button
             settingsButton.Click += (sender, ea) =>
@@ -50,8 +41,28 @@ namespace Mukes.Droid
             // Refresh Button
             refreshButton.Click += (sender, ea) =>
             {
-                // TODO: Refresh Here
+                // Load Menu to ListView
+                LoadMenu();
             };
+        }
+
+        // Load Menu to ListView
+        private void LoadMenu()
+        {
+            RSSFeed.List.Clear(); // Clear RSSFeed List
+            // Fetch RSS Feed
+            switch (RSSFeed.Fetch())
+            {
+                case "FetchSuccessfull":
+                    // Add MenuListAdapter to menuList
+                    MenuListAdapter customAdapter = new MenuListAdapter(this, RSSFeed.List);
+                    _menuList.Adapter = customAdapter;
+                    break;
+                case "NetworkError":
+                    System.Diagnostics.Debug.WriteLine("RSSFeed Fetch: NetworkError");
+                    Notifications.CreateAlert(this, "NetworkError").Show();
+                    break;
+            }
         }
     }
 }
