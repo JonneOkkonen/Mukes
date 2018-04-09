@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <TextView
+    android:text="Title"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/title"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:textStyle="bold" />
+  <TextView
+    android:text="BreakfestTitle"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/breakfestTitle"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:textStyle="bold"
+    android:layout_marginBottom="-5dp" />
+  <TextView
+    android:text="BreakfestDescription"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/breakfestDescription"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"/>
+  <TextView
+    android:text="LunchTitle"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lunchTitle"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:textStyle="bold"
+    android:layout_marginBottom="-5dp" />
+  <TextView
+    android:text="LunchDescription"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lunchDescription"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp" />
+  <TextView
+    android:text="DinnerTitle"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/dinnerTitle"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:textStyle="bold"
+    android:layout_marginBottom="-5dp" />
+  <TextView
+    android:text="DinnerDescription"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/dinnerDescription"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp" />
+  <TextView
+    android:text="EveningSnackTitle"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/eveningSnackTitle"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:textStyle="bold"
+    android:layout_marginBottom="-5dp" />
+  <TextView
+    android:text="EveningSnackDescription"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/eveningSnackDescription"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="10dp" />
+</LinearLayout>

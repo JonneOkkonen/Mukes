@@ -24,25 +24,16 @@ namespace Mukes.Droid
             var refreshButton = FindViewById<ImageButton>(Resource.Id.refresh);
             var settingsButton = FindViewById<ImageButton>(Resource.Id.settings);
             var menuList = FindViewById<ListView>(Resource.Id.menuList);
-            
-            // Add Data
-            List<string> menu = new List<string>();
+
+            // Restaurant Name
+            restaurantName.Text = "Sahara, Helsinki";
 
             // Fetch RSS Feed
             RSSFeed.Fetch();
 
-            // Fill menuList
-            // CHANGE TO USE RSSFEED.List AFTER CUSTOM LIST ITEM IS CREATED
-            foreach(MenuStructure item in RSSFeed.List)
-            {
-                menu.Add($"{item.Title} Aamupala:{item.Breakfast} Lounas:{item.Lunch} Päivällinen:{item.Dinner} Iltapala:{item.EveningSnack}");
-            }
-
-            // MenuAdapter
-            ArrayAdapter<string> menuAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, menu);
-
-            // Add Adapter to menuList
-            menuList.Adapter = menuAdapter;
+            // Add MenuListAdapter to menuList
+            MenuListAdapter customAdapter = new MenuListAdapter(this, RSSFeed.List);
+            menuList.Adapter = customAdapter;
 
             // Settings Button
             settingsButton.Click += (sender, ea) =>

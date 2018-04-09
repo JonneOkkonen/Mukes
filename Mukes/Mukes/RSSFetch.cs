@@ -120,6 +120,7 @@ namespace Mukes.Core
                 result = description.Split(new string[] { $"{meal}:" }, StringSplitOptions.None)[1].Split('.')[0].Trim();
             }catch(IndexOutOfRangeException){
                 System.Diagnostics.Debug.WriteLine($"NoMealFound ({meal}:{description})");
+                return "No data";
             }
 
             return result;
