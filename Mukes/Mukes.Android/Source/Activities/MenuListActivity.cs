@@ -1,9 +1,7 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Widget;
 using Android.OS;
-using System.Collections.Generic;
 using Mukes.Core;
 using Android.Content;
 
@@ -29,11 +27,18 @@ namespace Mukes.Droid
             restaurantName.Text = "Sahara, Helsinki";
 
             // Fetch RSS Feed
-            RSSFeed.Fetch();
-
-            // Add MenuListAdapter to menuList
-            MenuListAdapter customAdapter = new MenuListAdapter(this, RSSFeed.List);
-            menuList.Adapter = customAdapter;
+            switch(RSSFeed.Fetch())
+            {
+                case "FetchSuccessfull":
+                    // Add MenuListAdapter to menuList
+                    MenuListAdapter customAdapter = new MenuListAdapter(this, RSSFeed.List);
+                    menuList.Adapter = customAdapter;
+                    break;
+                case "NetworkError":
+                    System.Diagnostics.Debug.WriteLine("RSSFeed Fetch: NetworkError");
+                    Notifications.CreateAlert(this, "NetworkError").Show();
+                    break;
+            }
 
             // Settings Button
             settingsButton.Click += (sender, ea) =>

@@ -60,6 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Activities\SettingsActivity.cs" />
     <Compile Include="Source\Adapters\MenuListAdapter.cs" />
+    <Compile Include="Source\Utilities\Notifications.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

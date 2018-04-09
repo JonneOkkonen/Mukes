@@ -3769,6 +3769,12 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f090027
 			public const int abc_toolbar_collapse_description = 2131296295;
 			
+			// aapt resource value: 0x7f090041
+			public const int alertButton = 2131296321;
+			
+			// aapt resource value: 0x7f090040
+			public const int alertTitle = 2131296320;
+			
 			// aapt resource value: 0x7f09003f
 			public const int app_name = 2131296319;
 			
