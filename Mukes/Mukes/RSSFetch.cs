@@ -13,12 +13,13 @@ namespace Mukes.Core
     {
         public static List<MenuStructure> List = new List<MenuStructure>();
 
-        public static string Fetch()
+        public static string Fetch(string rss_url)
         {
             try
             {
-                string rss_url = "http://ruokalistat.leijonacatering.fi/rss/2/1/549339f9-e510-e511-892b-78e3b50298fc";
-
+                if (rss_url == "noValue"){
+                    return "noURL";
+                }
                 // Create XMLDocument
                 XmlDocument rssXmlDoc = new XmlDocument();
 

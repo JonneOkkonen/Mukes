@@ -4,6 +4,7 @@ using Android.Widget;
 using Android.OS;
 using Mukes.Core;
 using Android.Content;
+using Android.Preferences;
 
 namespace Mukes.Droid
 {
@@ -11,7 +12,7 @@ namespace Mukes.Droid
     public class MenuListActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         ListView _menuList;
-        ProgressDialog _spinner;
+        TextView _restaurantName;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -20,13 +21,10 @@ namespace Mukes.Droid
             SetContentView(Resource.Layout.MenuListView);
 
             // Resources
-            var restaurantName = FindViewById<TextView>(Resource.Id.restaurantName);
+            _restaurantName = FindViewById<TextView>(Resource.Id.restaurantName);
             var refreshButton = FindViewById<ImageButton>(Resource.Id.refresh);
             var settingsButton = FindViewById<ImageButton>(Resource.Id.settings);
             _menuList = FindViewById<ListView>(Resource.Id.menuList);
-
-            // Restaurant Name
-            restaurantName.Text = "Sahara, Helsinki";
 
             // Load Menu to ListView
             LoadMenu();
@@ -49,9 +47,21 @@ namespace Mukes.Droid
         // Load Menu to ListView
         private void LoadMenu()
         {
+            // Read selectedRestaurant name and URL from SharedPreferences
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            var name = prefs.GetString("selectedRestaurantName", "noValue");
+            var url = prefs.GetString("selectedRestaurantURL", "noValue");
+
+            // Set Restaurant Name
+            if(name == "noValue"){
+                _restaurantName.Text = "Select restaurant";
+            }else{
+                _restaurantName.Text = name;
+            }
+
             RSSFeed.List.Clear(); // Clear RSSFeed List
             // Fetch RSS Feed
-            switch (RSSFeed.Fetch())
+            switch (RSSFeed.Fetch(url))
             {
                 case "FetchSuccessfull":
                     // Add MenuListAdapter to menuList
@@ -61,6 +71,9 @@ namespace Mukes.Droid
                 case "NetworkError":
                     System.Diagnostics.Debug.WriteLine("RSSFeed Fetch: NetworkError");
                     Notifications.CreateAlert(this, "NetworkError").Show();
+                    break;
+                case "noURL":
+                    Notifications.CreateAlert(this, "No Restaurant Selected.\n Go to the Settings and Select your restaurant.").Show();
                     break;
             }
         }

@@ -1,6 +1,8 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using Android.Preferences;
 using Android.Support.V7.App;
 using Android.Views;
 
@@ -35,6 +37,13 @@ namespace Mukes.Droid
         {
             if (item.ItemId == Android.Resource.Id.Home)
             {
+                // Save selectedRestaurant URL to SharedPreferences
+                ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+                ISharedPreferencesEditor editor = prefs.Edit();
+                editor.PutString("selectedRestaurantName", SettingsFragment.restaurantList.Entry);
+                editor.PutString("selectedRestaurantURL", SettingsFragment.restaurantList.Value);
+                editor.Apply();
+
                 Finish();
             }
             return base.OnOptionsItemSelected(item);

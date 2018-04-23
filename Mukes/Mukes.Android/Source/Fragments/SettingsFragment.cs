@@ -7,7 +7,7 @@ namespace Mukes.Droid
 {
     public class SettingsFragment : PreferenceFragment
     {
-        private ListPreference restaurantList;
+        public static ListPreference restaurantList;
         public override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
