@@ -9,7 +9,7 @@ using Android.Views;
 namespace Mukes.Droid
 {
     [Activity(Label = "SettingsActivity", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class SettingsActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class SettingsActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {

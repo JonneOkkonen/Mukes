@@ -78,11 +78,14 @@ namespace Mukes.Core
         /// <returns></returns>
         private static string TitleParse(string title)
         {
-            // Remove Henkilöstölounaat
+            // Remove Meals contains word from Exception List
             // Check if Title includes word "henkilö" or Title is empty
-            if (title.ToLower().Contains("henkilö") || title == "")
+            foreach(string item in Lists.MenuExceptionList)
             {
-                return "skip";
+                if (title.ToLower().Contains(item) || title == "")
+                {
+                    return "skip";
+                }
             }
 
             string result = "";
@@ -133,6 +136,10 @@ namespace Mukes.Core
                 return "No data";
             }
 
+            // Check If result is empty
+            if(result == "") {
+                return "No data";
+            }
             return result;
         }
     }

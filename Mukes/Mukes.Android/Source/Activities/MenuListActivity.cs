@@ -73,7 +73,7 @@ namespace Mukes.Droid
                     Notifications.CreateAlert(this, "NetworkError").Show();
                     break;
                 case "noURL":
-                    Notifications.CreateAlert(this, "No Restaurant Selected.\n Go to the Settings and Select your restaurant.").Show();
+                    Notifications.CreateAlert(this, "No Restaurant Selected.").Show();
                     break;
             }
         }

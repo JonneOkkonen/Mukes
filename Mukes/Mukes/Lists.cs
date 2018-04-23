@@ -76,5 +76,14 @@ namespace Mukes.Core
             new RestaurantsStructure("Kotka, Utti", "http://ruokalistat.leijonacatering.fi/rss/2/1/85a09ab2-f813-e511-892b-78e3b50298fc"),
             new RestaurantsStructure("Linna, Vekaranjärvi", "http://ruokalistat.leijonacatering.fi/rss/2/1/25b3a8ba-f813-e511-892b-78e3b50298fc")
         });
+
+        // Exception List for Meal Titles
+        public static List<string> MenuExceptionList = new List<string>(new string[]
+        {
+            "henkilö",
+            "kajnetti_1",
+            "suo_asiakas1",
+            "sodas_1"
+        });
     }
 }
