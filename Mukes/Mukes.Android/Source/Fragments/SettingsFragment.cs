@@ -32,21 +32,13 @@ namespace Mukes.Droid
             // Set values to PreferenceItems
             // Restaurant List
             restaurantList.Title = "Restaurant";
-            restaurantList.Summary = "Select Restaurant"; // Description
             restaurantList.SetEntries(names.ToArray()); // Restaurant Names
             restaurantList.SetEntryValues(urls.ToArray()); // Restaurant URL's
             restaurantList.DialogTitle = "Select Restaurant";
-            restaurantList.PreferenceChange += RestaurantList_PreferenceChange; // Preference Changed Action
 
             // Version
             currentVersion.Title = "Version";
             currentVersion.Summary = "1.0";
-        }
-
-        // Restaurant List Selection Action
-        private void RestaurantList_PreferenceChange(object sender, Preference.PreferenceChangeEventArgs e)
-        {
-            restaurantList.Summary = restaurantList.Entry;
         }
     }
 }
