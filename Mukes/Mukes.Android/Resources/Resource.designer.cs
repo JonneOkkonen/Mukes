@@ -3877,6 +3877,9 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f090028
 			public const int search_menu_title = 2131296296;
 			
+			// aapt resource value: 0x7f090042
+			public const int settingsTitle = 2131296322;
+			
 			// aapt resource value: 0x7f090029
 			public const int status_bar_notification_info_overflow = 2131296297;
 			

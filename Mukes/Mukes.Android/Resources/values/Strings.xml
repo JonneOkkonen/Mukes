@@ -4,4 +4,5 @@
 	<string name="app_name">Mukes.Droid</string>
   <string name="alertTitle">Alert</string>
   <string name="alertButton">Dismiss</string>
+  <string name="settingsTitle">Settings</string>
 </resources>
