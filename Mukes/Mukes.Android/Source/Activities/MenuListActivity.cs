@@ -77,6 +77,13 @@ namespace Mukes.Droid
                     break;
             }
         }
+
+        // When coming back from Settings LoadMenu again
+        protected override void OnResume()
+        {
+            base.OnResume();
+            LoadMenu();
+        }
     }
 }
 
