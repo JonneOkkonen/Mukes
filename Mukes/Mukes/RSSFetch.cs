@@ -80,7 +80,7 @@ namespace Mukes.Core
         {
             // Remove Meals contains word from Exception List
             // Check if Title includes word "henkilö" or Title is empty
-            foreach(string item in Lists.MenuExceptionList)
+            foreach(string item in Lists.MenuException)
             {
                 if (title.ToLower().Contains(item) || title == "")
                 {

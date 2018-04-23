@@ -40,6 +40,7 @@ namespace Mukes.Droid
                 // Save selectedRestaurant URL to SharedPreferences
                 ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
                 ISharedPreferencesEditor editor = prefs.Edit();
+                editor.PutString("selectedLanguage", SettingsFragment.languageList.Value);
                 editor.PutString("selectedRestaurantName", SettingsFragment.restaurantList.Entry);
                 editor.PutString("selectedRestaurantURL", SettingsFragment.restaurantList.Value);
                 editor.Apply();

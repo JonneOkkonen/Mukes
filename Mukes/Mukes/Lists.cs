@@ -78,12 +78,20 @@ namespace Mukes.Core
         });
 
         // Exception List for Meal Titles
-        public static List<string> MenuExceptionList = new List<string>(new string[]
+        public static List<string> MenuException = new List<string>(new string[]
         {
             "henkilö",
             "kajnetti_1",
             "suo_asiakas1",
             "sodas_1"
+        });
+
+        // Language Options
+        public static List<string> Language = new List<string>(new string[]
+{
+            "Suomi",
+            "English",
+            "Svenska"
         });
     }
 }

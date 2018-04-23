@@ -8,6 +8,7 @@ namespace Mukes.Droid
     public class SettingsFragment : PreferenceFragment
     {
         public static ListPreference restaurantList;
+        public static ListPreference languageList;
         public override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -17,6 +18,7 @@ namespace Mukes.Droid
 
             // Preference Items
             restaurantList = (ListPreference)FindPreference("restaurantList");
+            languageList = (ListPreference)FindPreference("languageList");
             var currentVersion = FindPreference("currentVersion");
 
             // List for Restaurant names and URLs
@@ -35,6 +37,12 @@ namespace Mukes.Droid
             restaurantList.SetEntries(names.ToArray()); // Restaurant Names
             restaurantList.SetEntryValues(urls.ToArray()); // Restaurant URL's
             restaurantList.DialogTitle = "Select Restaurant";
+
+            // Language List
+            languageList.Title = "Language";
+            languageList.SetEntries(Lists.Language.ToArray());
+            languageList.SetEntryValues(Lists.Language.ToArray());
+            languageList.DialogTitle = "Select Language";
 
             // Version
             currentVersion.Title = "Version";
