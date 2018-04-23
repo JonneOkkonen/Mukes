@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Mukes</string>
+  
+  <!--Alerts/Messages-->
+  <string name="alertTitle">Varoitus</string>
+  <string name="selectRestaurant">Valitse ravintola</string>
+  <string name="networkError">Ei verkkoyhteyttä</string>
+  <string name="noRestaurantSelected">Ei valittua ravintolaa</string>
+  <string name="selectLanguage">Valitse kieli</string>
+  
+  <!--Buttons-->
+  <string name="alertButton">Sulje</string>
+  
+  <!--Titles-->
+  <string name="settingsTitle">Asetukset</string>
+  <string name="restaurantTitle">Ravintola</string>
+  <string name="languageTitle">Kieli</string>
+  <string name="versionTitle">Versio</string>
+  
+  <!--Meals-->
+  <string name="breakfast">Aamupala</string>
+  <string name="lunch">Lounas</string>
+  <string name="dinner">Päivällinen</string>
+  <string name="eveningSnack">Iltapala</string>
+</resources>

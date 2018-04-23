@@ -33,19 +33,19 @@ namespace Mukes.Droid
 
             // Set values to PreferenceItems
             // Restaurant List
-            restaurantList.Title = "Restaurant";
+            restaurantList.Title = GetString(Resource.String.restaurantTitle);
             restaurantList.SetEntries(names.ToArray()); // Restaurant Names
             restaurantList.SetEntryValues(urls.ToArray()); // Restaurant URL's
-            restaurantList.DialogTitle = "Select Restaurant";
+            restaurantList.DialogTitle = GetString(Resource.String.selectRestaurant);
 
             // Language List
-            languageList.Title = "Language";
+            languageList.Title = GetString(Resource.String.languageTitle);
             languageList.SetEntries(Lists.Language.ToArray());
             languageList.SetEntryValues(Lists.Language.ToArray());
-            languageList.DialogTitle = "Select Language";
+            languageList.DialogTitle = GetString(Resource.String.selectLanguage);
 
             // Version
-            currentVersion.Title = "Version";
+            currentVersion.Title = GetString(Resource.String.versionTitle);
             currentVersion.Summary = "1.0";
         }
     }

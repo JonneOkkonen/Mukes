@@ -13,18 +13,32 @@ namespace Mukes.Core
     {
         public static List<MenuStructure> List = new List<MenuStructure>();
 
-        public static string Fetch(string rss_url)
+        public static string Fetch(string rss_url, string language)
         {
             try
             {
+                // Check If there is URL
                 if (rss_url == "noValue"){
                     return "noURL";
                 }
+
+                // Set Correct Language on URL
+                string URL = rss_url;
+                switch (language)
+                {
+                    case "en":
+                        URL = URL.Substring(0, 42) + "1" + URL.Substring(43);
+                        break;
+                    case "sv":
+                        URL = URL.Substring(0, 42) + "3" + URL.Substring(43);
+                        break;
+                }
+
                 // Create XMLDocument
                 XmlDocument rssXmlDoc = new XmlDocument();
 
                 // Get RSS with HttpWebRequest
-                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(rss_url);
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(URL);
 
                 // Set Timeout to 10 seconds
                 req.Timeout = 10000; // Timeout in milliseconds
@@ -44,7 +58,7 @@ namespace Mukes.Core
                 {
                     // Title
                     XmlNode rssSubNode = rssNode.SelectSingleNode("title");
-                    string title = TitleParse(rssSubNode != null ? rssSubNode.InnerText : "");
+                    string title = TitleParse(rssSubNode != null ? rssSubNode.InnerText : "", language);
 
                     // Check if item needs to be skipped
                     if (title != "skip")
@@ -55,12 +69,25 @@ namespace Mukes.Core
                         string description = rssSubNode != null ? rssSubNode.InnerText : "";
 
                         // Parse Meals and add data to list
+                        var list = Lists.MealsFI;
+                        switch(language)
+                        {
+                            case "fi":
+                                list = Lists.MealsFI;
+                                break;
+                            case "en":
+                                list = Lists.MealsEN;
+                                break;
+                            case "sv":
+                                list = Lists.MealsSV;
+                                break;
+                        }
                         List.Add(new MenuStructure(
                                  title,
-                                 MealParse(description, Lists.MealsFI[(int)Lists.Meals.Breakfast]),
-                                 MealParse(description, Lists.MealsFI[(int)Lists.Meals.Lunch]),
-                                 MealParse(description, Lists.MealsFI[(int)Lists.Meals.Dinner]),
-                                 MealParse(description, Lists.MealsFI[(int)Lists.Meals.EveningSnack])
+                                 MealParse(description, list[(int)Lists.Meals.Breakfast]),
+                                 MealParse(description, list[(int)Lists.Meals.Lunch]),
+                                 MealParse(description, list[(int)Lists.Meals.Dinner]),
+                                 MealParse(description, list[(int)Lists.Meals.EveningSnack])
                                 ));
                     }
                 }
@@ -76,7 +103,7 @@ namespace Mukes.Core
         /// </summary>
         /// <param name="title">Title from RSSFeed</param>
         /// <returns></returns>
-        private static string TitleParse(string title)
+        private static string TitleParse(string title, string language)
         {
             // Remove Meals contains word from Exception List
             // Check if Title includes word "henkilö" or Title is empty
@@ -91,9 +118,22 @@ namespace Mukes.Core
             string result = "";
 
             // Find day of the week from title
-            foreach (string item in Lists.Viikonpaiva)
+            var list = Lists.Viikonpaiva;
+            switch (language)
             {
-                if(title.Contains(item)){
+                case "fi":
+                    list = Lists.Viikonpaiva;
+                    break;
+                case "en":
+                    list = Lists.DayOfTheWeek;
+                    break;
+                case "sv":
+                    list = Lists.Veckodag;
+                    break;
+            }
+            foreach (string item in list)
+            {
+                if(title.ToLower().Contains(item.ToLower())){
                     result = item;
                 }
             }

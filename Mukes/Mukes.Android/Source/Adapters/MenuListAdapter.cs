@@ -42,13 +42,13 @@ namespace Mukes.Droid
 
             MenuStructure item = this[position];
             view.FindViewById<TextView>(Resource.Id.title).Text = item.Title; // Title
-            view.FindViewById<TextView>(Resource.Id.breakfestTitle).Text = "Aamiainen: "; // Breakfest Title
+            view.FindViewById<TextView>(Resource.Id.breakfestTitle).Text = _activity.GetString(Resource.String.breakfast); // Breakfest Title
             view.FindViewById<TextView>(Resource.Id.breakfestDescription).Text = item.Breakfast; // Breakfest Description
-            view.FindViewById<TextView>(Resource.Id.lunchTitle).Text = "Lounas: "; // Lunch Title
+            view.FindViewById<TextView>(Resource.Id.lunchTitle).Text = _activity.GetString(Resource.String.lunch); // Lunch Title
             view.FindViewById<TextView>(Resource.Id.lunchDescription).Text = item.Lunch; // Lunch Description
-            view.FindViewById<TextView>(Resource.Id.dinnerTitle).Text = "Päivällinen: "; // Dinner Title
+            view.FindViewById<TextView>(Resource.Id.dinnerTitle).Text = _activity.GetString(Resource.String.dinner); // Dinner Title
             view.FindViewById<TextView>(Resource.Id.dinnerDescription).Text = item.Dinner; // Dinner Description
-            view.FindViewById<TextView>(Resource.Id.eveningSnackTitle).Text = "Iltapala: "; // Evening Snack Title
+            view.FindViewById<TextView>(Resource.Id.eveningSnackTitle).Text = _activity.GetString(Resource.String.eveningSnack); // Evening Snack Title
             view.FindViewById<TextView>(Resource.Id.eveningSnackDescription).Text = item.EveningSnack; // Evening Snack Description
 
             return view;

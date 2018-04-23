@@ -26,6 +26,16 @@ namespace Mukes.Core
             "Sunday"
         });
 
+        public static List<string> Veckodag = new List<string>(new string[] {
+            "Måndag",
+            "Tisdag",
+            "Onsdag",
+            "Torsdag",
+            "Fredag",
+            "Lördag",
+            "Söndag"
+        });
+
         public static List<string> DateFormats = new List<string>(new string[]
         {
             @"(?<day>\d{2}).(?<month>\d{2}).(?<year>\d{4})", // 00.00.0000
@@ -52,6 +62,14 @@ namespace Mukes.Core
             "Dinner",
             "Evening snack"
         });
+
+        public static List<string> MealsSV = new List<string>(new string[]
+{
+            "Morgonmål",
+            "Lunch",
+            "Middag",
+            "Kvällsmat"
+});
 
         public static List<RestaurantsStructure> RSSFeedList = new List<RestaurantsStructure>(new RestaurantsStructure[]
         {
