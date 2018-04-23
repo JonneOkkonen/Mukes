@@ -59,6 +59,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Activities\SettingsActivity.cs" />
+    <Compile Include="Source\Fragments\SettingsFragment.cs" />
     <Compile Include="Source\Adapters\MenuListAdapter.cs" />
     <Compile Include="Source\Utilities\Notifications.cs" />
   </ItemGroup>
@@ -68,10 +69,13 @@
     <AndroidResource Include="Resources\layout\MenuListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Settings.axml">
+    <AndroidResource Include="Resources\layout\SettingsFragment.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MenuListAdapter.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SettingsActivity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
