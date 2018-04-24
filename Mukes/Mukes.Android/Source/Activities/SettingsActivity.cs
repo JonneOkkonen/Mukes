@@ -11,6 +11,8 @@ namespace Mukes.Droid
     [Activity(Label = "SettingsActivity", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class SettingsActivity : AppCompatActivity
     {
+        public static string Name;
+        public static string Language;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -24,6 +26,11 @@ namespace Mukes.Droid
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
             SupportActionBar.SetTitle(Resource.String.settingsTitle);
+
+            // Load Data from SharedPreferences
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            Name = prefs.GetString("selectedRestaurantName", "noValue");
+            Language = prefs.GetString("selectedLanguage", "noValue");
 
             // Load Fragment
             var fragment = new SettingsFragment();

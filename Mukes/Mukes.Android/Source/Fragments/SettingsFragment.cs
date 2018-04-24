@@ -37,12 +37,35 @@ namespace Mukes.Droid
             restaurantList.SetEntries(names.ToArray()); // Restaurant Names
             restaurantList.SetEntryValues(urls.ToArray()); // Restaurant URL's
             restaurantList.DialogTitle = GetString(Resource.String.selectRestaurant);
+            if(SettingsActivity.Name != "noValue" && restaurantList.Summary == "%s") {
+                restaurantList.Summary = SettingsActivity.Name;
+            }
+            restaurantList.PreferenceChange += (sender, ea) => {
+                restaurantList.Summary = "%s";
+            };
 
             // Language List
             languageList.Title = GetString(Resource.String.languageTitle);
             languageList.SetEntries(Lists.Language.ToArray());
             languageList.SetEntryValues(Lists.Language.ToArray());
             languageList.DialogTitle = GetString(Resource.String.selectLanguage);
+            if (SettingsActivity.Language != "noValue" && languageList.Summary == "%s") {
+                switch(SettingsActivity.Language)
+                {
+                    case "fi":
+                        languageList.Summary = "Suomi";
+                        break;
+                    case "sv":
+                        languageList.Summary = "Svenska";
+                        break;
+                    case "en":
+                        languageList.Summary = "English";
+                        break;
+                }
+            }
+            languageList.PreferenceChange += (sender, ea) => {
+                languageList.Summary = "%s";
+            };
 
             // Version
             currentVersion.Title = GetString(Resource.String.versionTitle);
