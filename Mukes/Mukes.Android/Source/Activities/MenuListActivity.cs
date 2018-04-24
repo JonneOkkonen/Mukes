@@ -5,8 +5,6 @@ using Android.OS;
 using Mukes.Core;
 using Android.Content;
 using Android.Preferences;
-using Java.Util;
-using Android.Content.Res;
 
 namespace Mukes.Droid
 {
@@ -20,6 +18,13 @@ namespace Mukes.Droid
         {
             base.OnCreate(bundle);
 
+            // Check If FirstTimeSetups has been done
+            if(SetupChecker() == "RunSetup") {
+
+                // Go to FirstTimeSetup
+                StartActivity(new Intent(ApplicationContext, typeof(FirstTimeSetupActivity)));
+            }
+
             // Content View
             SetContentView(Resource.Layout.MenuListView);
 
@@ -28,9 +33,6 @@ namespace Mukes.Droid
             var refreshButton = FindViewById<ImageButton>(Resource.Id.refresh);
             var settingsButton = FindViewById<ImageButton>(Resource.Id.settings);
             _menuList = FindViewById<ListView>(Resource.Id.menuList);
-
-            // Set Language
-            language = Language.Set(this);
 
             // Load Menu to ListView
             LoadMenu();
@@ -90,6 +92,21 @@ namespace Mukes.Droid
             base.OnResume();
             language = Language.Set(this);
             LoadMenu();
+        }
+
+        // Check If FirstTimeSetup has been done
+        private string SetupChecker()
+        {
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            var name = prefs.GetString("selectedRestaurantName", "noValue");
+            var url = prefs.GetString("selectedRestaurantURL", "noValue");
+            var language = prefs.GetString("selectedLanguage", "noValue");
+
+            if(name == "noValue" && url == "noValue" && language == "noValue"){
+                return "RunSetup";
+            }else{
+                return "Continue";
+            }
         }
     }
 }

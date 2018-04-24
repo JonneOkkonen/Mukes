@@ -18,10 +18,10 @@ namespace Mukes.Droid
     public class Language
     {
         // Set Language
-        public static string Set(Context context)
+        public static string Set(Context context, string lang = null)
         {
             // Load Language from SharedPreferences
-            var language = PreferenceManager.GetDefaultSharedPreferences(context).GetString("selectedLanguage", "en");
+            var language = lang ?? PreferenceManager.GetDefaultSharedPreferences(context).GetString("selectedLanguage", "en");
             var locale = new Locale(language);
             Locale.Default = locale;
             Configuration config = new Configuration();
