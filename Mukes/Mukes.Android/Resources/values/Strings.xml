@@ -11,12 +11,14 @@
   
   <!--Buttons-->
   <string name="alertButton">Dismiss</string>
+  <string name="saveChanges">Save Changes</string>
   
   <!--Titles-->
   <string name="settingsTitle">Settings</string>
   <string name="restaurantTitle">Restaurant</string>
   <string name="languageTitle">Language</string>
   <string name="versionTitle">Version</string>
+  <string name="firstTimeSetupTitle">FirstTimeSetup</string>
   
   <!--Meals-->
   <string name="breakfast">Breakfest</string>

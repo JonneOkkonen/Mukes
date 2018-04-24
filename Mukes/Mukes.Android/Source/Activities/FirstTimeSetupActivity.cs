@@ -86,10 +86,10 @@ namespace Mukes.Droid
             }
 
             // Language Translations
-            title.Text = "FirstTimeSetup";
+            title.Text = GetString(Resource.String.firstTimeSetupTitle);
             selectLanguageTitle.Text = GetString(Resource.String.selectLanguage);
             selectRestaurantTitle.Text = GetString(Resource.String.selectRestaurant);
-            saveSettings.Text = "Save Changes";
+            saveSettings.Text = GetString(Resource.String.saveChanges);
 
             // Spinner Adapter
             ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, restaurants);

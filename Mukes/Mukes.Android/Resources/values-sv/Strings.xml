@@ -11,12 +11,14 @@
   
   <!--Buttons-->
   <string name="alertButton">Avfärda</string>
+  <string name="saveChanges">Spara</string>
   
   <!--Titles-->
   <string name="settingsTitle">Inställningar</string>
   <string name="restaurantTitle">Restaurang</string>
   <string name="languageTitle">Språk</string>
   <string name="versionTitle">Version</string>
+  <string name="firstTimeSetupTitle">FirstTimeSetup</string>
   
   <!--Meals-->
   <string name="breakfast">Morgonmål</string>

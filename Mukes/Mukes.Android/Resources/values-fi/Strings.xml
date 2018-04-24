@@ -11,12 +11,14 @@
   
   <!--Buttons-->
   <string name="alertButton">Sulje</string>
+  <string name="saveChanges">Tallenna</string>
   
   <!--Titles-->
   <string name="settingsTitle">Asetukset</string>
   <string name="restaurantTitle">Ravintola</string>
   <string name="languageTitle">Kieli</string>
   <string name="versionTitle">Versio</string>
+  <string name="firstTimeSetupTitle">FirstTimeSetup</string>
   
   <!--Meals-->
   <string name="breakfast">Aamupala</string>
