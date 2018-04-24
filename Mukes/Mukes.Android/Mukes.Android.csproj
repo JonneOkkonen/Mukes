@@ -65,6 +65,7 @@
     <Compile Include="Source\Activities\SettingsActivity.cs" />
     <Compile Include="Source\Fragments\SettingsFragment.cs" />
     <Compile Include="Source\Adapters\MenuListAdapter.cs" />
+    <Compile Include="Source\Utilities\Language.cs" />
     <Compile Include="Source\Utilities\Notifications.cs" />
   </ItemGroup>
   <ItemGroup>

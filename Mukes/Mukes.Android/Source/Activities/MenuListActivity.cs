@@ -30,7 +30,7 @@ namespace Mukes.Droid
             _menuList = FindViewById<ListView>(Resource.Id.menuList);
 
             // Set Language
-            language = SetLanguage();
+            language = Language.Set(this);
 
             // Load Menu to ListView
             LoadMenu();
@@ -84,36 +84,11 @@ namespace Mukes.Droid
             }
         }
 
-        // Set Language
-        private string SetLanguage()
-        {
-            // Load Language from SharedPreferences
-            var language = PreferenceManager.GetDefaultSharedPreferences(ApplicationContext).GetString("selectedLanguage", "en");
-            var locale = new Locale(language);
-            Locale.Default = locale;
-            Configuration config = new Configuration();
-            config.Locale = locale;
-
-            // Update Configuration
-            if (Android.OS.Build.VERSION.SdkInt >= (Android.OS.BuildVersionCodes)25)
-            {
-                this.CreateConfigurationContext(config);
-            }
-            else
-            {
-#pragma warning disable 0618
-                //UpdateConfiguration deprecated in API 25
-                this.Resources.UpdateConfiguration(config, this.Resources.DisplayMetrics);
-#pragma warning restore 0618
-            }
-            return language;
-        }
-
         // When coming back from Settings LoadMenu again
         protected override void OnResume()
         {
             base.OnResume();
-            language = SetLanguage();
+            language = Language.Set(this);
             LoadMenu();
         }
     }
