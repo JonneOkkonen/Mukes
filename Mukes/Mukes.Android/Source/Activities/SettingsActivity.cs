@@ -13,6 +13,7 @@ namespace Mukes.Droid
     {
         public static string Name;
         public static string Language;
+        public static string Version;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -31,6 +32,9 @@ namespace Mukes.Droid
             ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
             Name = prefs.GetString("selectedRestaurantName", "noValue");
             Language = prefs.GetString("selectedLanguage", "noValue");
+
+            // Get Current Version
+            Version = GetVersion();
 
             // Load Fragment
             var fragment = new SettingsFragment();
@@ -66,6 +70,16 @@ namespace Mukes.Droid
                 Finish();
             }
             return base.OnOptionsItemSelected(item);
+        }
+        // Get Current Version
+        public string GetVersion()
+        {
+            var context = global::Android.App.Application.Context;
+
+            PackageManager manager = context.PackageManager;
+            PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
+
+            return info.VersionName;
         }
     }
 }

@@ -69,7 +69,7 @@ namespace Mukes.Droid
 
             // Version
             currentVersion.Title = GetString(Resource.String.versionTitle);
-            currentVersion.Summary = "1.0";
+            currentVersion.Summary = SettingsActivity.Version;
         }
     }
 }
