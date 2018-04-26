@@ -2886,11 +2886,11 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f080028
 			public const int bottom = 2131230760;
 			
-			// aapt resource value: 0x7f080089
-			public const int breakfestDescription = 2131230857;
+			// aapt resource value: 0x7f08008a
+			public const int breakfestDescription = 2131230858;
 			
-			// aapt resource value: 0x7f080088
-			public const int breakfestTitle = 2131230856;
+			// aapt resource value: 0x7f080089
+			public const int breakfestTitle = 2131230857;
 			
 			// aapt resource value: 0x7f08004b
 			public const int buttonPanel = 2131230795;
@@ -2958,11 +2958,11 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f08007c
 			public const int design_navigation_view = 2131230844;
 			
-			// aapt resource value: 0x7f08008d
-			public const int dinnerDescription = 2131230861;
+			// aapt resource value: 0x7f08008e
+			public const int dinnerDescription = 2131230862;
 			
-			// aapt resource value: 0x7f08008c
-			public const int dinnerTitle = 2131230860;
+			// aapt resource value: 0x7f08008d
+			public const int dinnerTitle = 2131230861;
 			
 			// aapt resource value: 0x7f080012
 			public const int disableHome = 2131230738;
@@ -2976,8 +2976,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f0800c5
 			public const int end_padder = 2131230917;
 			
-			// aapt resource value: 0x7f080084
-			public const int english = 2131230852;
+			// aapt resource value: 0x7f080085
+			public const int english = 2131230853;
 			
 			// aapt resource value: 0x7f08002a
 			public const int enterAlways = 2131230762;
@@ -2985,11 +2985,11 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f08002b
 			public const int enterAlwaysCollapsed = 2131230763;
 			
-			// aapt resource value: 0x7f08008f
-			public const int eveningSnackDescription = 2131230863;
+			// aapt resource value: 0x7f080090
+			public const int eveningSnackDescription = 2131230864;
 			
-			// aapt resource value: 0x7f08008e
-			public const int eveningSnackTitle = 2131230862;
+			// aapt resource value: 0x7f08008f
+			public const int eveningSnackTitle = 2131230863;
 			
 			// aapt resource value: 0x7f08002c
 			public const int exitUntilCollapsed = 2131230764;
@@ -3009,8 +3009,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f080033
 			public const int fill_vertical = 2131230771;
 			
-			// aapt resource value: 0x7f080082
-			public const int finnish = 2131230850;
+			// aapt resource value: 0x7f080083
+			public const int finnish = 2131230851;
 			
 			// aapt resource value: 0x7f08003f
 			public const int @fixed = 2131230783;
@@ -3057,11 +3057,11 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f080048
 			public const int list_item = 2131230792;
 			
-			// aapt resource value: 0x7f08008b
-			public const int lunchDescription = 2131230859;
+			// aapt resource value: 0x7f08008c
+			public const int lunchDescription = 2131230860;
 			
-			// aapt resource value: 0x7f08008a
-			public const int lunchTitle = 2131230858;
+			// aapt resource value: 0x7f08008b
+			public const int lunchTitle = 2131230859;
 			
 			// aapt resource value: 0x7f0800c9
 			public const int masked = 2131230921;
@@ -3210,8 +3210,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f0800b9
 			public const int right_side = 2131230905;
 			
-			// aapt resource value: 0x7f080087
-			public const int saveSettings = 2131230855;
+			// aapt resource value: 0x7f080088
+			public const int saveSettings = 2131230856;
 			
 			// aapt resource value: 0x7f08001a
 			public const int screen = 2131230746;
@@ -3261,14 +3261,14 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f080071
 			public const int search_voice_btn = 2131230833;
 			
-			// aapt resource value: 0x7f080081
-			public const int selectLanguage = 2131230849;
+			// aapt resource value: 0x7f080082
+			public const int selectLanguage = 2131230850;
+			
+			// aapt resource value: 0x7f080087
+			public const int selectRestaurant = 2131230855;
 			
 			// aapt resource value: 0x7f080086
-			public const int selectRestaurant = 2131230854;
-			
-			// aapt resource value: 0x7f080085
-			public const int selectRestaurantTitle = 2131230853;
+			public const int selectRestaurantTitle = 2131230854;
 			
 			// aapt resource value: 0x7f080072
 			public const int select_dialog_listview = 2131230834;
@@ -3333,8 +3333,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f08006f
 			public const int submit_area = 2131230831;
 			
-			// aapt resource value: 0x7f080083
-			public const int svenska = 2131230851;
+			// aapt resource value: 0x7f080084
+			public const int svenska = 2131230852;
 			
 			// aapt resource value: 0x7f080011
 			public const int tabMode = 2131230737;
@@ -3372,8 +3372,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f080057
 			public const int title_template = 2131230807;
 			
-			// aapt resource value: 0x7f080090
-			public const int toolbar = 2131230864;
+			// aapt resource value: 0x7f080081
+			public const int toolbar = 2131230849;
 			
 			// aapt resource value: 0x7f080029
 			public const int top = 2131230761;
