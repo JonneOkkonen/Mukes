@@ -29,7 +29,7 @@ namespace Mukes.Droid
             string lang = Resources.Configuration.Locale.ToString();
 
             // Set Language that phone uses
-            Language.Set(this, lang);
+            Language.Set(this, lang.Substring(0,2));
             SelectedLanguage = lang;
 
             // Resources
@@ -43,7 +43,7 @@ namespace Mukes.Droid
             var saveSettings = FindViewById<Button>(Resource.Id.saveSettings);
 
             // Select Language that phone uses
-            switch(lang)
+            switch(lang.Substring(0, 2))
             {
                 case "fi":
                     finnish.SetImageResource(Resource.Drawable.finnish_flag_selected);
