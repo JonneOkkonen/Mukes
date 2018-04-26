@@ -48,25 +48,28 @@ namespace Mukes.Droid
         {
             if (item.ItemId == Android.Resource.Id.Home)
             {
-                // Save selectedRestaurant URL to SharedPreferences
-                ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
-                ISharedPreferencesEditor editor = prefs.Edit();
-                switch (SettingsFragment.languageList.Value)
+                // Check If restaurantList Entry is null
+                if(SettingsFragment.restaurantList.Entry != null)
                 {
-                    case "Suomi":
-                        editor.PutString("selectedLanguage", "fi");
-                        break;
-                    case "English":
-                        editor.PutString("selectedLanguage", "en");
-                        break;
-                    case "Svenska":
-                        editor.PutString("selectedLanguage", "sv");
-                        break;
+                    // Save selectedRestaurant URL to SharedPreferences
+                    ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+                    ISharedPreferencesEditor editor = prefs.Edit();
+                    switch (SettingsFragment.languageList.Value)
+                    {
+                        case "Suomi":
+                            editor.PutString("selectedLanguage", "fi");
+                            break;
+                        case "English":
+                            editor.PutString("selectedLanguage", "en");
+                            break;
+                        case "Svenska":
+                            editor.PutString("selectedLanguage", "sv");
+                            break;
+                    }
+                    editor.PutString("selectedRestaurantName", SettingsFragment.restaurantList.Entry);
+                    editor.PutString("selectedRestaurantURL", SettingsFragment.restaurantList.Value);
+                    editor.Apply();
                 }
-                editor.PutString("selectedRestaurantName", SettingsFragment.restaurantList.Entry);
-                editor.PutString("selectedRestaurantURL", SettingsFragment.restaurantList.Value);
-                editor.Apply();
-
                 Finish();
             }
             return base.OnOptionsItemSelected(item);

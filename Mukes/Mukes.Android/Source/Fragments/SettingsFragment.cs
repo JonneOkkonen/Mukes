@@ -37,7 +37,7 @@ namespace Mukes.Droid
             restaurantList.SetEntries(names.ToArray()); // Restaurant Names
             restaurantList.SetEntryValues(urls.ToArray()); // Restaurant URL's
             restaurantList.DialogTitle = GetString(Resource.String.selectRestaurant);
-            if(SettingsActivity.Name != "noValue" && restaurantList.Summary == "%s") {
+            if(SettingsActivity.Name != "noValue") {
                 restaurantList.Summary = SettingsActivity.Name;
             }
             restaurantList.PreferenceChange += (sender, ea) => {
@@ -49,7 +49,7 @@ namespace Mukes.Droid
             languageList.SetEntries(Lists.Language.ToArray());
             languageList.SetEntryValues(Lists.Language.ToArray());
             languageList.DialogTitle = GetString(Resource.String.selectLanguage);
-            if (SettingsActivity.Language != "noValue" && languageList.Summary == "%s") {
+            if (SettingsActivity.Language != "noValue") {
                 switch(SettingsActivity.Language)
                 {
                     case "fi":
