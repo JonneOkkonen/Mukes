@@ -22,23 +22,16 @@ namespace Mukes.Droid
         {
             // Load Language from SharedPreferences
             var language = lang ?? PreferenceManager.GetDefaultSharedPreferences(context).GetString("selectedLanguage", "en");
-            var locale = new Locale(language);
+
+            Configuration config = context.Resources.Configuration;
+
+            Locale locale = new Locale(language);
             Locale.Default = locale;
-            Configuration config = new Configuration();
             config.Locale = locale;
 
-            // Update Configuration
-            if (Android.OS.Build.VERSION.SdkInt >= (Android.OS.BuildVersionCodes)25)
-            {
-                context.CreateConfigurationContext(config);
-            }
-            else
-            {
-#pragma warning disable 0618
-                //UpdateConfiguration deprecated in API 25
-                context.Resources.UpdateConfiguration(config, context.Resources.DisplayMetrics);
-#pragma warning restore 0618
-            }
+            //UpdateConfiguration deprecated in API 25
+            context.Resources.UpdateConfiguration(config, context.Resources.DisplayMetrics);
+
             return language;
         }
     }
