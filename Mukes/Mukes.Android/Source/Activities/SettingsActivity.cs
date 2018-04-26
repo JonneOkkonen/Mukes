@@ -43,37 +43,44 @@ namespace Mukes.Droid
             fragmentManager.Commit();
         }
 
-        // Back-button
+        // Toolbar Back-button
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Android.Resource.Id.Home)
             {
-                // Check If restaurantList Entry is null
-                if(SettingsFragment.restaurantList.Entry != null)
-                {
-                    // Save selectedRestaurant URL to SharedPreferences
-                    ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
-                    ISharedPreferencesEditor editor = prefs.Edit();
-                    switch (SettingsFragment.languageList.Value)
-                    {
-                        case "Suomi":
-                            editor.PutString("selectedLanguage", "fi");
-                            break;
-                        case "English":
-                            editor.PutString("selectedLanguage", "en");
-                            break;
-                        case "Svenska":
-                            editor.PutString("selectedLanguage", "sv");
-                            break;
-                    }
-                    editor.PutString("selectedRestaurantName", SettingsFragment.restaurantList.Entry);
-                    editor.PutString("selectedRestaurantURL", SettingsFragment.restaurantList.Value);
-                    editor.Apply();
-                }
                 Finish();
             }
             return base.OnOptionsItemSelected(item);
         }
+
+        // Save Changes when Finish
+        public override void Finish()
+        {
+            base.Finish();
+            // Check If restaurantList Entry is null
+            if (SettingsFragment.restaurantList.Entry != null)
+            {
+                // Save selectedRestaurant URL to SharedPreferences
+                ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+                ISharedPreferencesEditor editor = prefs.Edit();
+                switch (SettingsFragment.languageList.Value)
+                {
+                    case "Suomi":
+                        editor.PutString("selectedLanguage", "fi");
+                        break;
+                    case "English":
+                        editor.PutString("selectedLanguage", "en");
+                        break;
+                    case "Svenska":
+                        editor.PutString("selectedLanguage", "sv");
+                        break;
+                }
+                editor.PutString("selectedRestaurantName", SettingsFragment.restaurantList.Entry);
+                editor.PutString("selectedRestaurantURL", SettingsFragment.restaurantList.Value);
+                editor.Apply();
+            }
+        }
+
         // Get Current Version
         public string GetVersion()
         {
