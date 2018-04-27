@@ -8,6 +8,7 @@
   <string name="networkError">Ingen nätverksanslutning</string>
   <string name="noRestaurantSelected">Ingen restaurang vald</string>
   <string name="selectLanguage">Välj språket</string>
+  <string name="feedbackMsg">Klicka för att öppna Google Feedback-formuläret</string>
   
   <!--Buttons-->
   <string name="alertButton">Avfärda</string>
@@ -19,6 +20,8 @@
   <string name="languageTitle">Språk</string>
   <string name="versionTitle">Version</string>
   <string name="firstTimeSetupTitle">FirstTimeSetup</string>
+  <string name="developer">Developer</string>
+  <string name="feedback">Skicka feedback</string>
   
   <!--Meals-->
   <string name="breakfast">Morgonmål</string>

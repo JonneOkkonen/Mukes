@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-     <ListPreference
-        android:title="title"
-        android:key="languageList"
-        android:summary="%s" />
     <ListPreference
-        android:title="title"
-        android:key="restaurantList"
-        android:summary="%s" />
-    <Preference
-        android:title="title"
-        android:key="currentVersion"
-        android:summary="number" />
+      android:title="title"
+      android:key="languageList"
+      android:summary="%s" />
+  <ListPreference
+      android:title="title"
+      android:key="restaurantList"
+      android:summary="%s" />
+  <Preference
+      android:title="title"
+      android:key="currentVersion"
+      android:summary="number" />
+  <Preference
+      android:title="title"
+      android:key="developer"
+      android:summary="name" />
+  <Preference
+      android:title="title"
+      android:key="feedback"
+      android:summary="address" />
 </PreferenceScreen>

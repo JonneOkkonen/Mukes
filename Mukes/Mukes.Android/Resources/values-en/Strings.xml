@@ -8,6 +8,7 @@
   <string name="networkError">No Network Connection</string>
   <string name="noRestaurantSelected">No Restaurant Selected</string>
   <string name="selectLanguage">Select Language</string>
+  <string name="feedbackMsg">Click to open Google Feedback form</string>
   
   <!--Buttons-->
   <string name="alertButton">Dismiss</string>
@@ -19,6 +20,8 @@
   <string name="languageTitle">Language</string>
   <string name="versionTitle">Version</string>
   <string name="firstTimeSetupTitle">FirstTimeSetup</string>
+  <string name="developer">Developer</string>
+  <string name="feedback">Send feedback</string>
   
   <!--Meals-->
   <string name="breakfast">Breakfast</string>

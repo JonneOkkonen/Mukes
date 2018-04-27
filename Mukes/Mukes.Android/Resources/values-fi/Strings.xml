@@ -8,6 +8,7 @@
   <string name="networkError">Ei verkkoyhteyttä</string>
   <string name="noRestaurantSelected">Ei valittua ravintolaa</string>
   <string name="selectLanguage">Valitse kieli</string>
+  <string name="feedbackMsg">Avaa Googlen palautuslomake painamalla</string>
   
   <!--Buttons-->
   <string name="alertButton">Sulje</string>
@@ -19,6 +20,8 @@
   <string name="languageTitle">Kieli</string>
   <string name="versionTitle">Versio</string>
   <string name="firstTimeSetupTitle">FirstTimeSetup</string>
+  <string name="developer">Kehittäjä</string>
+  <string name="feedback">Lähetä palautetta</string>
   
   <!--Meals-->
   <string name="breakfast">Aamupala</string>

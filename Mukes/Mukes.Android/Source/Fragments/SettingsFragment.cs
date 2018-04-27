@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Android.Content;
 using Android.OS;
 using Android.Preferences;
 using Mukes.Core;
@@ -20,6 +21,8 @@ namespace Mukes.Droid
             restaurantList = (ListPreference)FindPreference("restaurantList");
             languageList = (ListPreference)FindPreference("languageList");
             var currentVersion = FindPreference("currentVersion");
+            var developer = FindPreference("developer");
+            var feedback = FindPreference("feedback");
 
             // List for Restaurant names and URLs
             List<string> names = new List<string>();
@@ -77,6 +80,27 @@ namespace Mukes.Droid
             // Version
             currentVersion.Title = GetString(Resource.String.versionTitle);
             currentVersion.Summary = SettingsActivity.Version;
+
+            // Developer
+            developer.Title = GetString(Resource.String.developer);
+            developer.Summary = "Jonne Okkonen";
+
+            // Feedback
+            feedback.Title = GetString(Resource.String.feedback);
+            feedback.Summary = GetString(Resource.String.feedbackMsg);
+            feedback.PreferenceClick += (sender, ea) =>
+            {
+                // Open Google Form
+                OpenPage("https://goo.gl/forms/igh5hHvLwroUl3o52");
+            };
+        }
+
+        // Open WebPage
+        private void OpenPage(string url)
+        {
+            var uri = Android.Net.Uri.Parse(url);
+            var intent = new Intent(Intent.ActionView, uri);
+            this.StartActivity(intent);
         }
     }
 }
