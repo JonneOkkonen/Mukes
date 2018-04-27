@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mukes.Core
+﻿namespace Mukes.Core
 {
     public class RestaurantsStructure
     {

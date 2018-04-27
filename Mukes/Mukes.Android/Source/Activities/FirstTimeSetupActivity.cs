@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Preferences;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Mukes.Core;
 
@@ -81,7 +76,7 @@ namespace Mukes.Droid
 
             // Load Restaurants to List
             List<string> restaurants = new List<string>();
-            foreach (RestaurantsStructure item in Lists.RSSFeedList){
+            foreach (RestaurantsStructure item in Lists.RSSFeed){
                 restaurants.Add(item.Name);
             }
 
@@ -102,7 +97,7 @@ namespace Mukes.Droid
             {
                 // Get restaurant Name and URL
                 string restaurantName = selectRestaurant.SelectedItem.ToString();
-                string restaurantURL = Lists.RSSFeedList[Lists.RSSFeedList.FindIndex(x => x.Name == restaurantName)].RSSFeedURL;
+                string restaurantURL = Lists.RSSFeed[Lists.RSSFeed.FindIndex(x => x.Name == restaurantName)].RSSFeedURL;
 
                 // Save data to SharedPreferences
                 ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);

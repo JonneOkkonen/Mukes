@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Mukes.Core
 {
@@ -71,7 +69,7 @@ namespace Mukes.Core
             "Kvällsmat"
 });
 
-        public static List<RestaurantsStructure> RSSFeedList = new List<RestaurantsStructure>(new RestaurantsStructure[]
+        public static List<RestaurantsStructure> RSSFeed = new List<RestaurantsStructure>(new RestaurantsStructure[]
         {
             new RestaurantsStructure("Creutz, Dragsvik", "http://ruokalistat.leijonacatering.fi/rss/2/1/65b125f6-f713-e511-892b-78e3b50298fc"),
             new RestaurantsStructure("Rokka, Hamina", "http://ruokalistat.leijonacatering.fi/rss/2/1/a5cbc816-f813-e511-892b-78e3b50298fc"),

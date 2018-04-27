@@ -3069,8 +3069,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f08008b
 			public const int lunchTitle = 2131230859;
 			
-			// aapt resource value: 0x7f0800c9
-			public const int masked = 2131230921;
+			// aapt resource value: 0x7f0800c8
+			public const int masked = 2131230920;
 			
 			// aapt resource value: 0x7f0800b5
 			public const int media_actions = 2131230901;
@@ -3297,9 +3297,6 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f080017
 			public const int showTitle = 2131230743;
 			
-			// aapt resource value: 0x7f0800c7
-			public const int sliding_tabs = 2131230919;
-			
 			// aapt resource value: 0x7f080073
 			public const int smallLabel = 2131230835;
 			
@@ -3405,8 +3402,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f08000e
 			public const int view_offset_helper = 2131230734;
 			
-			// aapt resource value: 0x7f0800c8
-			public const int visible = 2131230920;
+			// aapt resource value: 0x7f0800c7
+			public const int visible = 2131230919;
 			
 			// aapt resource value: 0x7f0800a7
 			public const int volume_item_container = 2131230887;
@@ -3712,10 +3709,7 @@ namespace Mukes.Droid
 			public const int support_simple_spinner_dropdown_item = 2130903110;
 			
 			// aapt resource value: 0x7f030047
-			public const int Tabbar = 2130903111;
-			
-			// aapt resource value: 0x7f030048
-			public const int Toolbar = 2130903112;
+			public const int Toolbar = 2130903111;
 			
 			static Layout()
 			{

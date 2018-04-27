@@ -26,7 +26,7 @@ namespace Mukes.Droid
             List<string> urls = new List<string>();
 
             // Add Restaurant names and url's to their list's
-            foreach (RestaurantsStructure item in Lists.RSSFeedList){
+            foreach (RestaurantsStructure item in Lists.RSSFeed){
                 names.Add(item.Name);
                 urls.Add(item.RSSFeedURL);
             }
@@ -37,18 +37,25 @@ namespace Mukes.Droid
             restaurantList.SetEntries(names.ToArray()); // Restaurant Names
             restaurantList.SetEntryValues(urls.ToArray()); // Restaurant URL's
             restaurantList.DialogTitle = GetString(Resource.String.selectRestaurant);
-            if(SettingsActivity.Name != "noValue") {
-                restaurantList.Summary = SettingsActivity.Name;
-            }
-            restaurantList.PreferenceChange += (sender, ea) => {
-                restaurantList.Summary = "%s";
-            };
 
             // Language List
             languageList.Title = GetString(Resource.String.languageTitle);
             languageList.SetEntries(Lists.Language.ToArray());
             languageList.SetEntryValues(Lists.Language.ToArray());
             languageList.DialogTitle = GetString(Resource.String.selectLanguage);
+
+            // Load Values from SharedPreferences after FirstTimeSetup
+
+            // RestaurantList
+            if (SettingsActivity.Name != "noValue")
+            {
+                restaurantList.Summary = SettingsActivity.Name;
+            }
+            restaurantList.PreferenceChange += (sender, ea) => {
+                restaurantList.Summary = "%s";
+            };
+
+            // LanguageList
             if (SettingsActivity.Language != "noValue") {
                 switch(SettingsActivity.Language)
                 {
