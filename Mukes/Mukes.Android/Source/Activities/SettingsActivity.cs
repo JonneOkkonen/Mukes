@@ -57,10 +57,22 @@ namespace Mukes.Droid
         public override void Finish()
         {
             base.Finish();
+
             // Check If restaurantList Entry is null
             if (SettingsFragment.restaurantList.Entry != null)
             {
-                // Save selectedRestaurant URL to SharedPreferences
+                // Save selectedRestaurant Name and URL to SharedPreferences
+                ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+                ISharedPreferencesEditor editor = prefs.Edit();
+                editor.PutString("selectedRestaurantName", SettingsFragment.restaurantList.Entry);
+                editor.PutString("selectedRestaurantURL", SettingsFragment.restaurantList.Value);
+                editor.Apply();
+            }
+
+            // Check If languageList Entry is null
+            if(SettingsFragment.languageList.Entry != null)
+            {
+                // Save selectedLanguage to SharedPreferences
                 ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
                 ISharedPreferencesEditor editor = prefs.Edit();
                 switch (SettingsFragment.languageList.Value)
@@ -75,8 +87,6 @@ namespace Mukes.Droid
                         editor.PutString("selectedLanguage", "sv");
                         break;
                 }
-                editor.PutString("selectedRestaurantName", SettingsFragment.restaurantList.Entry);
-                editor.PutString("selectedRestaurantURL", SettingsFragment.restaurantList.Value);
                 editor.Apply();
             }
         }
