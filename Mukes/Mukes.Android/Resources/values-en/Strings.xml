@@ -16,6 +16,7 @@
   
   <!--Titles-->
   <string name="settingsTitle">Settings</string>
+  <string name="infoTitle">Information</string>
   <string name="restaurantTitle">Restaurant</string>
   <string name="languageTitle">Language</string>
   <string name="versionTitle">Version</string>

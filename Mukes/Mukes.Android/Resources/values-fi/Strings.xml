@@ -16,6 +16,7 @@
   
   <!--Titles-->
   <string name="settingsTitle">Asetukset</string>
+  <string name="infoTitle">Tietoja</string>
   <string name="restaurantTitle">Ravintola</string>
   <string name="languageTitle">Kieli</string>
   <string name="versionTitle">Versio</string>

@@ -3832,35 +3832,38 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f090037
 			public const int bottom_sheet_behavior = 2131296311;
 			
-			// aapt resource value: 0x7f09004e
-			public const int breakfast = 2131296334;
+			// aapt resource value: 0x7f09004f
+			public const int breakfast = 2131296335;
 			
 			// aapt resource value: 0x7f090038
 			public const int character_counter_pattern = 2131296312;
 			
-			// aapt resource value: 0x7f09004c
-			public const int developer = 2131296332;
-			
-			// aapt resource value: 0x7f090050
-			public const int dinner = 2131296336;
+			// aapt resource value: 0x7f09004d
+			public const int developer = 2131296333;
 			
 			// aapt resource value: 0x7f090051
-			public const int eveningSnack = 2131296337;
+			public const int dinner = 2131296337;
 			
-			// aapt resource value: 0x7f09004d
-			public const int feedback = 2131296333;
+			// aapt resource value: 0x7f090052
+			public const int eveningSnack = 2131296338;
+			
+			// aapt resource value: 0x7f09004e
+			public const int feedback = 2131296334;
 			
 			// aapt resource value: 0x7f090044
 			public const int feedbackMsg = 2131296324;
 			
-			// aapt resource value: 0x7f09004b
-			public const int firstTimeSetupTitle = 2131296331;
+			// aapt resource value: 0x7f09004c
+			public const int firstTimeSetupTitle = 2131296332;
 			
-			// aapt resource value: 0x7f090049
-			public const int languageTitle = 2131296329;
+			// aapt resource value: 0x7f090048
+			public const int infoTitle = 2131296328;
 			
-			// aapt resource value: 0x7f09004f
-			public const int lunch = 2131296335;
+			// aapt resource value: 0x7f09004a
+			public const int languageTitle = 2131296330;
+			
+			// aapt resource value: 0x7f090050
+			public const int lunch = 2131296336;
 			
 			// aapt resource value: 0x7f090000
 			public const int mr_button_content_description = 2131296256;
@@ -3946,8 +3949,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f09003d
 			public const int path_password_strike_through = 2131296317;
 			
-			// aapt resource value: 0x7f090048
-			public const int restaurantTitle = 2131296328;
+			// aapt resource value: 0x7f090049
+			public const int restaurantTitle = 2131296329;
 			
 			// aapt resource value: 0x7f090046
 			public const int saveChanges = 2131296326;
@@ -3967,8 +3970,8 @@ namespace Mukes.Droid
 			// aapt resource value: 0x7f090029
 			public const int status_bar_notification_info_overflow = 2131296297;
 			
-			// aapt resource value: 0x7f09004a
-			public const int versionTitle = 2131296330;
+			// aapt resource value: 0x7f09004b
+			public const int versionTitle = 2131296331;
 			
 			static String()
 			{
