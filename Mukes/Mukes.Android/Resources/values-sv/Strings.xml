@@ -25,8 +25,8 @@
   <string name="feedback">Skicka feedback</string>
   
   <!--Meals-->
-  <string name="breakfast">Morgonmål</string>
+  <string name="breakfast">Frukost</string>
   <string name="lunch">Lunch</string>
   <string name="dinner">Middag</string>
-  <string name="eveningSnack">Kvällsmat</string>
+  <string name="eveningSnack">Kvällsmål</string>
 </resources>

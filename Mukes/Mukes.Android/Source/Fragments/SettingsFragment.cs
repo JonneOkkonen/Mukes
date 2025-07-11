@@ -88,6 +88,8 @@ namespace Mukes.Droid
             // Feedback
             feedback.Title = GetString(Resource.String.feedback);
             feedback.Summary = GetString(Resource.String.feedbackMsg);
+            // Disabled as Form is no longer available
+            feedback.Enabled = false;
             feedback.PreferenceClick += (sender, ea) =>
             {
                 // Open Google Form

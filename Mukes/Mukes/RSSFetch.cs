@@ -25,13 +25,13 @@ namespace Mukes.Core
                 switch (language)
                 {
                     case "en":
-                        URL = URL.Substring(0, 42) + "1" + URL.Substring(43);
+                        URL = URL.Substring(0, 44) + "EN" + URL.Substring(46);
                         break;
                     case "sv":
-                        URL = URL.Substring(0, 42) + "3" + URL.Substring(43);
+                        URL = URL.Substring(0, 44) + "SV" + URL.Substring(46);
                         break;
                 }
-
+                
                 // Create XMLDocument
                 XmlDocument rssXmlDoc = new XmlDocument();
 
@@ -143,7 +143,13 @@ namespace Mukes.Core
                 Match match = rx.Match(title);
                 if (match.Success){
 
-                    result = result + $" {match}";
+                    if (result.Length == 0)
+                    {
+                        result = title;
+                    } else
+                    {
+                        result = result + $" {match}";
+                    }
 
                     if (result == ""){
                         return "skip";
@@ -168,7 +174,7 @@ namespace Mukes.Core
 
             // Parse given Meal
             try{
-                result = description.Split(new string[] { $"{meal}:" }, StringSplitOptions.None)[1].Split('.')[0].Trim();
+                result = description.Split(new string[] { $"{meal}:" }, StringSplitOptions.None)[1].Split("<br>")[0].Trim();
             }catch(IndexOutOfRangeException){
                 System.Diagnostics.Debug.WriteLine($"NoMealFound ({meal}:{description})");
                 return "No data";
