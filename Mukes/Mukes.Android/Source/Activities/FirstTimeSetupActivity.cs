@@ -4,6 +4,7 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
+using Mukes.Android;
 using Mukes.Core;
 
 namespace Mukes.Droid
@@ -84,7 +85,7 @@ namespace Mukes.Droid
             saveSettings.Text = GetString(Resource.String.saveChanges);
 
             // Spinner Adapter
-            ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, restaurants);
+            ArrayAdapter adapter = new ArrayAdapter<string>(this, global::Android.Resource.Layout.SimpleSpinnerDropDownItem, restaurants);
 
             // Add adapter to Spinner
             selectRestaurant.Adapter = adapter;

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Android.Content;
 using Android.OS;
 using Android.Preferences;
+using Mukes.Android;
 using Mukes.Core;
 
 namespace Mukes.Droid
@@ -93,16 +93,7 @@ namespace Mukes.Droid
             feedback.PreferenceClick += (sender, ea) =>
             {
                 // Open Google Form
-                OpenPage("https://goo.gl/forms/igh5hHvLwroUl3o52");
             };
-        }
-
-        // Open WebPage
-        private void OpenPage(string url)
-        {
-            var uri = Android.Net.Uri.Parse(url);
-            var intent = new Intent(Intent.ActionView, uri);
-            this.StartActivity(intent);
         }
     }
 }

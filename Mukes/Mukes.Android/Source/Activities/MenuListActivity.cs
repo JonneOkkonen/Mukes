@@ -1,15 +1,17 @@
-﻿using Android.App;
-using Android.Content.PM;
+﻿using Android.Content.PM;
 using Android.Widget;
 using Android.OS;
 using Mukes.Core;
 using Android.Content;
 using Android.Util;
+using AndroidX.AppCompat.App;
+using Android.App;
+using Mukes.Android;
 
 namespace Mukes.Droid
 {
     [Activity(Label = "Mukes", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MenuListActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MenuListActivity : AppCompatActivity
     {
 
         ListView _menuList;

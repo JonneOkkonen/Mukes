@@ -2,9 +2,10 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Android.Support.V7.App;
-using Android.Util;
 using Android.Views;
+using AndroidX.AppCompat.App;
+using Mukes.Android;
+using Toolbar = AndroidX.AppCompat.Widget.Toolbar;
 
 namespace Mukes.Droid
 {
@@ -22,7 +23,7 @@ namespace Mukes.Droid
             SetContentView(Resource.Layout.SettingsActivity);
 
             // Toolbar Setup
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
@@ -47,7 +48,7 @@ namespace Mukes.Droid
         // Toolbar Back-button
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            if (item.ItemId == Android.Resource.Id.Home)
+            if (item.ItemId == global::Android.Resource.Id.Home)
             {
                 Finish();
             }

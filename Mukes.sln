@@ -1,20 +1,12 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2015
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36930.0 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mukes.Android", "Mukes\Mukes.Android\Mukes.Android.csproj", "{78813C18-83E0-4195-9358-E849D4F20605}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mukes.Android", "Mukes\Mukes.Android\Mukes.Android.csproj", "{78813C18-83E0-4195-9358-E849D4F20605}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mukes.iOS", "Mukes\Mukes.iOS\Mukes.iOS.csproj", "{EE101261-0158-4012-AAC3-971F63AC6286}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Core", "Mukes\Mukes\Core.shproj", "{30009D9F-5E71-4850-88B2-C633EB002868}"
-EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Mukes\Mukes\Mukes.projitems*{30009d9f-5e71-4850-88b2-c633eb002868}*SharedItemsImports = 13
-		Mukes\Mukes\Mukes.projitems*{78813c18-83e0-4195-9358-e849d4f20605}*SharedItemsImports = 4
-		Mukes\Mukes\Mukes.projitems*{ee101261-0158-4012-aac3-971f63ac6286}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|iPhone = Ad-Hoc|iPhone
@@ -92,5 +84,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCA41296-3B54-499B-B3D4-05FF26461FD8}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Mukes\Mukes\Mukes.projitems*{78813c18-83e0-4195-9358-e849d4f20605}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal
