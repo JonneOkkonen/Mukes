@@ -72,26 +72,26 @@ namespace Mukes.Core
 
         public static List<RestaurantsStructure> RSSFeed = new List<RestaurantsStructure>(new RestaurantsStructure[]
         {
-            new RestaurantsStructure("Creutz, Dragsvik", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/CreutzDragsvik/Rss.aspx?Id=58666569-bd95-42c7-8d3b-7c8fffea819a&DateMode=1"),
-            new RestaurantsStructure("Rokka, Hamina", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/RokkaHamina/Rss.aspx?Id=ba55efbe-69a9-438e-8383-b200b0d7178c&DateMode=1"),
-            new RestaurantsStructure("Ignatius, Helsinki", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/IgnatiusHelsinki/Rss.aspx?Id=90810632-ebe7-4439-aef9-e9804576084a&DateMode=1"),
-            new RestaurantsStructure("Sahara, Helsinki", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/SaharaHelsinki/Rss.aspx?Id=c9b5578e-76b9-4113-adb0-c1b656ebc8fb&DateMode=1"),
-            new RestaurantsStructure("Hilma, Suomenlinna", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/HilmaSuomenlinna/Rss.aspx?Id=6b20be5f-8d08-4db5-8b72-9ed10639b12a&DateMode=1"),
-            new RestaurantsStructure("Hoikanhovi, Kajaani", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/HoikanhoviKajaani/Rss.aspx?Id=f27aacc5-6165-40f6-9dea-a184c290b129&DateMode=1"),
-            new RestaurantsStructure("Rakuuna, Lappeenranta", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/RakuunaLappeenranta/Rss.aspx?Id=6729eca1-938c-4ce1-8601-fa105efd4b42&DateMode=1"),
-            new RestaurantsStructure("Falkonetti, Niinisalo", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/FalkonettiNiinisalo/Rss.aspx?Id=15f995bb-ffdd-4409-81cb-a365251be564&DateMode=1"),
-            new RestaurantsStructure("Ruben, Parolannummi", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/RubenParola/Rss.aspx?Id=4911192a-210a-477f-93e0-49b14654c1ec&DateMode=1"),
-            new RestaurantsStructure("Sääksi, Pirkkala", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/SaaksiPirkkala/Rss.aspx?Id=ebede6f3-85ee-449c-a22e-b51da71d727a&DateMode=1"),
-            new RestaurantsStructure("Liesi, Orava", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/LiesiOrava/Rss.aspx?Id=7617e7a3-9a73-4825-b543-e9afe51c44ee&DateMode=1"),
-            new RestaurantsStructure("Somero, Rovaniemi", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/SomeroRovaniemi/Rss.aspx?Id=e1fd1a63-70f6-47bb-8dc0-e313d7680bbf&DateMode=1"),
-            new RestaurantsStructure("Tähti, Sodankylä", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/TahtiSodankyla/Rss.aspx?Id=9c0e7d5d-96fd-484d-b65d-09dd974afbd5&DateMode=1"),
-            new RestaurantsStructure("Rumpalipoika, Säkylä", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/RumpalipoikaSakyla/Rss.aspx?Id=6e0dd88e-f037-4f54-8180-019c046de49e&DateMode=1"),
-            new RestaurantsStructure("Luonetti, Tikkakoski", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/LuonettiTikkakoski/Rss.aspx?Id=e3dd1621-cb99-44f9-9993-cdd6ff1b95c7&DateMode=1"),
-            new RestaurantsStructure("Cirrus, Kuopio", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/CirrusKuopio/Rss.aspx?Id=d1c1acfb-3b7e-4046-8567-a7e953cad442&DateMode=1"),
-            new RestaurantsStructure("Poiju, Turku", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/PoijuTurku/Rss.aspx?Id=018f1caf-e1d8-4ae7-8370-4a6e9bf78974&DateMode=1"),
-            new RestaurantsStructure("Ankkuri, Upinniemi","https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/AnkkuriUpinniemi/Rss.aspx?Id=f7f85df9-33d8-4469-976c-79634f7374ce&DateMode=1"),
-            new RestaurantsStructure("Kotka, Utti", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/KotkaUtti/Rss.aspx?Id=eee37987-be23-4206-9920-dee167f83099&DateMode=1"),
-            new RestaurantsStructure("Linna, Vekaranjärvi", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/LinnaVekaranjarvi/Rss.aspx?Id=d763c987-c6fd-4ca9-af8d-5bf6ee2d31ec&DateMode=1")
+            new RestaurantsStructure("Creutz, Dragsvik", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/CreutzDragsvik/api/Common/Restaurant/GetRssFeed/58666569-bd95-42c7-8d3b-7c8fffea819a/1"),
+            new RestaurantsStructure("Rokka, Hamina", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/RokkaHamina/api/Common/Restaurant/GetRssFeed/ba55efbe-69a9-438e-8383-b200b0d7178c/1"),
+            new RestaurantsStructure("Ignatius, Helsinki", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/IgnatiusHelsinki/api/Common/Restaurant/GetRssFeed/90810632-ebe7-4439-aef9-e9804576084a/1"),
+            new RestaurantsStructure("Sahara, Helsinki", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/SaharaHelsinki/api/Common/Restaurant/GetRssFeed/c9b5578e-76b9-4113-adb0-c1b656ebc8fb/1"),
+            new RestaurantsStructure("Hilma, Suomenlinna", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/HilmaSuomenlinna/api/Common/Restaurant/GetRssFeed/6b20be5f-8d08-4db5-8b72-9ed10639b12a/1"),
+            new RestaurantsStructure("Hoikanhovi, Kajaani", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/HoikanhoviKajaani/api/Common/Restaurant/GetRssFeed/f27aacc5-6165-40f6-9dea-a184c290b129/1"),
+            new RestaurantsStructure("Rakuuna, Lappeenranta", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/RakuunaLappeenranta/api/Common/Restaurant/GetRssFeed/6729eca1-938c-4ce1-8601-fa105efd4b42/1"),
+            new RestaurantsStructure("Falkonetti, Niinisalo", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/FalkonettiNiinisalo/api/Common/Restaurant/GetRssFeed/15f995bb-ffdd-4409-81cb-a365251be564/1"),
+            new RestaurantsStructure("Ruben, Parolannummi", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/RubenParola/api/Common/Restaurant/GetRssFeed/4911192a-210a-477f-93e0-49b14654c1ec/1"),
+            new RestaurantsStructure("Sääksi, Pirkkala", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/SaaksiPirkkala/api/Common/Restaurant/GetRssFeed/ebede6f3-85ee-449c-a22e-b51da71d727a/1"),
+            new RestaurantsStructure("Liesi, Orava", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/LiesiOrava/api/Common/Restaurant/GetRssFeed/7617e7a3-9a73-4825-b543-e9afe51c44ee/1"),
+            new RestaurantsStructure("Somero, Rovaniemi", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/SomeroRovaniemi/api/Common/Restaurant/GetRssFeed/e1fd1a63-70f6-47bb-8dc0-e313d7680bbf/1"),
+            new RestaurantsStructure("Tähti, Sodankylä", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/TahtiSodankyla/api/Common/Restaurant/GetRssFeed/9c0e7d5d-96fd-484d-b65d-09dd974afbd5/1"),
+            new RestaurantsStructure("Rumpalipoika, Säkylä", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/RumpalipoikaSakyla/api/Common/Restaurant/GetRssFeed/6e0dd88e-f037-4f54-8180-019c046de49e/1"),
+            new RestaurantsStructure("Luonetti, Tikkakoski", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/LuonettiTikkakoski/api/Common/Restaurant/GetRssFeed/e3dd1621-cb99-44f9-9993-cdd6ff1b95c7/1"),
+            new RestaurantsStructure("Cirrus, Kuopio", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/CirrusKuopio/api/Common/Restaurant/GetRssFeed/d1c1acfb-3b7e-4046-8567-a7e953cad442/1"),
+            new RestaurantsStructure("Poiju, Turku", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/PoijuTurku/api/Common/Restaurant/GetRssFeed/018f1caf-e1d8-4ae7-8370-4a6e9bf78974/1"),
+            new RestaurantsStructure("Ankkuri, Upinniemi", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/AnkkuriUpinniemi/api/Common/Restaurant/GetRssFeed/f7f85df9-33d8-4469-976c-79634f7374ce/1"),
+            new RestaurantsStructure("Kotka, Utti", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/KotkaUtti/api/Common/Restaurant/GetRssFeed/eee37987-be23-4206-9920-dee167f83099/1"),
+            new RestaurantsStructure("Linna, Vekaranjärvi", "https://menu.leijonacatering.fi/AromieMenus/FI/Default/Leijona/LinnaVekaranjarvi/api/Common/Restaurant/GetRssFeed/d763c987-c6fd-4ca9-af8d-5bf6ee2d31ec/1")
         });
 
         // Exception List for Meal Titles
@@ -105,7 +105,7 @@ namespace Mukes.Core
 
         // Language Options
         public static List<string> Language = new List<string>(new string[]
-{
+        {
             "Suomi",
             "English",
             "Svenska"

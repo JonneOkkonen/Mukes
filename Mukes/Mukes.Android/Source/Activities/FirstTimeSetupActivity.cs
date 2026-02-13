@@ -3,7 +3,6 @@ using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Android.Preferences;
 using Android.Widget;
 using Mukes.Core;
 
@@ -21,11 +20,9 @@ namespace Mukes.Droid
             SetContentView(Resource.Layout.FirstTimeSetup);
 
             // Get Language that phone uses
-            string lang = Resources.Configuration.Locale.ToString();
+            string lang = Resources.Configuration.Locales.Get(0).ToString();
 
-            // Set Language that phone uses
-            Language.Set(this, lang.Substring(0,2));
-            SelectedLanguage = lang;
+            SelectedLanguage = lang.Substring(0, 2);
 
             // Resources
             var title = FindViewById<TextView>(Resource.Id.title);
@@ -100,7 +97,8 @@ namespace Mukes.Droid
                 string restaurantURL = Lists.RSSFeed[Lists.RSSFeed.FindIndex(x => x.Name == restaurantName)].RSSFeedURL;
 
                 // Save data to SharedPreferences
-                ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+                string prefName = $"{PackageName}_preferences";
+                ISharedPreferences prefs = GetSharedPreferences(prefName, FileCreationMode.Private);
                 ISharedPreferencesEditor editor = prefs.Edit();
                 editor.PutString("selectedLanguage", SelectedLanguage);
                 editor.PutString("selectedRestaurantName", restaurantName);

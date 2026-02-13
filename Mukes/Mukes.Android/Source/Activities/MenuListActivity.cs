@@ -4,16 +4,18 @@ using Android.Widget;
 using Android.OS;
 using Mukes.Core;
 using Android.Content;
-using Android.Preferences;
+using Android.Util;
 
 namespace Mukes.Droid
 {
     [Activity(Label = "Mukes", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MenuListActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+
         ListView _menuList;
         TextView _restaurantName;
         private string language;
+        private const string TAG = "MenuListActivity";
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -56,14 +58,16 @@ namespace Mukes.Droid
         private void LoadMenu()
         {
             // Read selectedRestaurant name and URL from SharedPreferences
-            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            string prefName = $"{PackageName}_preferences";
+            ISharedPreferences prefs = GetSharedPreferences(prefName, FileCreationMode.Private);
             var name = prefs.GetString("selectedRestaurantName", "noValue");
             var url = prefs.GetString("selectedRestaurantURL", "noValue");
+            language = prefs.GetString("selectedLanguage", "noValue");
 
             // Set Restaurant Name
-            if(name == "noValue"){
+            if (name == "noValue"){
                 _restaurantName.Text = GetString(Resource.String.selectRestaurant);
-            }else{
+            } else{
                 _restaurantName.Text = name;
             }
 
@@ -77,10 +81,15 @@ namespace Mukes.Droid
                     _menuList.Adapter = customAdapter;
                     break;
                 case "NetworkError":
-                    System.Diagnostics.Debug.WriteLine("RSSFeed Fetch: NetworkError");
+                    Log.Debug(TAG, "RSSFeed Fetch: NetworkError");
+                    Notifications.CreateAlert(this, GetString(Resource.String.networkError)).Show();
+                    break;
+                case "Error":
+                    Log.Debug(TAG, "RSSFeed Fetch: Error");
                     Notifications.CreateAlert(this, GetString(Resource.String.networkError)).Show();
                     break;
                 case "noURL":
+                    Log.Debug(TAG, "RSSFeed Fetch: No urls selected");
                     Notifications.CreateAlert(this, GetString(Resource.String.noRestaurantSelected)).Show();
                     break;
             }
@@ -90,21 +99,21 @@ namespace Mukes.Droid
         protected override void OnResume()
         {
             base.OnResume();
-            language = Language.Set(this);
             LoadMenu();
         }
 
         // Check If FirstTimeSetup has been done
         private string SetupChecker()
         {
-            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            string prefName = $"{PackageName}_preferences";
+            ISharedPreferences prefs = GetSharedPreferences(prefName, FileCreationMode.Private);
             var name = prefs.GetString("selectedRestaurantName", "noValue");
             var url = prefs.GetString("selectedRestaurantURL", "noValue");
-            var language = prefs.GetString("selectedLanguage", "noValue");
+            language = prefs.GetString("selectedLanguage", "noValue");
 
             if(name == "noValue" && url == "noValue" && language == "noValue"){
                 return "RunSetup";
-            }else{
+            } else{
                 return "Continue";
             }
         }

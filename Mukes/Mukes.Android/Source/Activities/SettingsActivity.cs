@@ -2,8 +2,8 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Android.Preferences;
 using Android.Support.V7.App;
+using Android.Util;
 using Android.Views;
 
 namespace Mukes.Droid
@@ -29,7 +29,8 @@ namespace Mukes.Droid
             SupportActionBar.SetTitle(Resource.String.settingsTitle);
 
             // Load Data from SharedPreferences
-            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+            string prefName = $"{PackageName}_preferences";
+            ISharedPreferences prefs = GetSharedPreferences(prefName, FileCreationMode.Private);
             Name = prefs.GetString("selectedRestaurantName", "noValue");
             Language = prefs.GetString("selectedLanguage", "noValue");
 
@@ -62,7 +63,8 @@ namespace Mukes.Droid
             if (SettingsFragment.restaurantList.Entry != null)
             {
                 // Save selectedRestaurant Name and URL to SharedPreferences
-                ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+                string prefName = $"{PackageName}_preferences";
+                ISharedPreferences prefs = GetSharedPreferences(prefName, FileCreationMode.Private);
                 ISharedPreferencesEditor editor = prefs.Edit();
                 editor.PutString("selectedRestaurantName", SettingsFragment.restaurantList.Entry);
                 editor.PutString("selectedRestaurantURL", SettingsFragment.restaurantList.Value);
@@ -73,7 +75,8 @@ namespace Mukes.Droid
             if(SettingsFragment.languageList.Entry != null)
             {
                 // Save selectedLanguage to SharedPreferences
-                ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(this);
+                string prefName = $"{PackageName}_preferences";
+                ISharedPreferences prefs = GetSharedPreferences(prefName, FileCreationMode.Private);
                 ISharedPreferencesEditor editor = prefs.Edit();
                 switch (SettingsFragment.languageList.Value)
                 {

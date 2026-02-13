@@ -1,22 +1,26 @@
-﻿using System;
+﻿using Android.Util;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Text.RegularExpressions;
 using System.Xml;
-using System.Net;
 
 namespace Mukes.Core
 {
     public class RSSFeed
     {
         public static List<MenuStructure> List = new List<MenuStructure>();
+        private const string TAG = "RSSFetch";
 
         public static string Fetch(string rss_url, string language)
         {
+            Log.Info(TAG, $"Fetch: url={rss_url}, language={language}");
             try
             {
                 // Check If there is URL
-                if (rss_url == "noValue"){
+                if (rss_url == "noValue")
+                {
                     return "noURL";
                 }
 
@@ -31,7 +35,7 @@ namespace Mukes.Core
                         URL = URL.Substring(0, 44) + "SV" + URL.Substring(46);
                         break;
                 }
-                
+
                 // Create XMLDocument
                 XmlDocument rssXmlDoc = new XmlDocument();
 
@@ -68,7 +72,7 @@ namespace Mukes.Core
 
                         // Parse Meals and add data to list
                         var list = Lists.MealsFI;
-                        switch(language)
+                        switch (language)
                         {
                             case "fi":
                                 list = Lists.MealsFI;
@@ -90,9 +94,16 @@ namespace Mukes.Core
                     }
                 }
                 return "FetchSuccessfull";
-            }catch(WebException)
+            }
+            catch (WebException ex)
             {
+                Log.Error(TAG, $"RSSFetch: Network error=({ex})");
                 return "NetworkError";
+            }
+            catch (Exception ex)
+            {
+                Log.Error(TAG, $"RSSFetch: error=({ex})");
+                return "Error";
             }
         }
 
@@ -158,7 +169,7 @@ namespace Mukes.Core
                     }
                 }
             }
-            System.Diagnostics.Debug.WriteLine($"No DateFound on Title ({title})");
+            Log.Info(TAG, $"No DateFound on Title ({title})");
             return "skip";
         }
 
@@ -174,9 +185,14 @@ namespace Mukes.Core
 
             // Parse given Meal
             try{
-                result = description.Split(new string[] { $"{meal}:" }, StringSplitOptions.None)[1].Split("<br>")[0].Trim();
-            }catch(IndexOutOfRangeException){
-                System.Diagnostics.Debug.WriteLine($"NoMealFound ({meal}:{description})");
+                result = description
+                    .Split(new string[] { $"{meal}:" }, StringSplitOptions.None)[1]
+                    .Split("<br><br>")[0]
+                    .Trim()
+                    .Replace("<br>", "\n")
+                    .Replace("), ", ")\n");
+            } catch(Exception){
+                Log.Info(TAG, $"NoMealFound ({meal}:{description})");
                 return "No data";
             }
 
