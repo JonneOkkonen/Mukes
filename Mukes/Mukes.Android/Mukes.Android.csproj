@@ -3,13 +3,13 @@
     <OutputType>Exe</OutputType>
     <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <Configurations>Ad-Hoc;AppStore;Debug;Release</Configurations>
-    <TargetFrameworks>net9.0-android</TargetFrameworks>
+    <TargetFrameworks>net9.0-android36.0</TargetFrameworks>
     <AssemblyTitle>Mukes.Android</AssemblyTitle>
     <Product>Mukes.Android</Product>
     <Copyright>Copyright ©  2014</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
-    <SupportedOSPlatformVersion>23.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion>24.0</SupportedOSPlatformVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <AndroidLinkMode>None</AndroidLinkMode>
@@ -30,8 +30,8 @@
     <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidSigningKeyStore>C:\Development\Android\Keystores\Mukes keystore\Mukes.keystore</AndroidSigningKeyStore>
     <AndroidSigningKeyAlias>mukes</AndroidSigningKeyAlias>
-    <AndroidSigningKeyPass>your_password</AndroidSigningKeyPass>
-    <AndroidSigningStorePass>your_password</AndroidSigningStorePass>
+    <AndroidSigningKeyPass>^*8tqQPZYuTJeB3&amp;lza^437Cea8vZy</AndroidSigningKeyPass>
+    <AndroidSigningStorePass>^*8tqQPZYuTJeB3&amp;lza^437Cea8vZy</AndroidSigningStorePass>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.1.2" />
